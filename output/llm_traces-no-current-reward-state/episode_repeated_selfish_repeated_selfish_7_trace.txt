@@ -1,0 +1,1682 @@
+EPISODE START
+Episode ID: repeated_selfish_7
+Scenario: repeated_selfish
+Pair ID: A1_A2
+World: - The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+Long-term memory: {
+  "episodes_played": 17,
+  "successful_episodes": 17,
+  "deadlocks": 0,
+  "convention_notes": [
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help."
+  ],
+  "recent_summaries": [
+    {
+      "episode_id": "repeated_selfish_2",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_3",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_4",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_5",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_6",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    }
+  ]
+}
+
+================================================================================EPISODE repeated_selfish_7 | STEP 0 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (0, 2)
+- Your goal position: (6, 2)
+- Other agent position: (6, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"Hello!","justification":"Move towards goal, no conflict with other agent"}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'Hello!', 'justification': 'Move towards goal, no conflict with other agent'}
+================================================================================EPISODE repeated_selfish_7 | STEP 0 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (6, 2)
+- Your goal position: (0, 2)
+- Other agent position: (0, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move left to avoid colliding with the other agent at (0,2)."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left to avoid colliding with the other agent at (0,2).'}
+--- STEP 0 OUTCOME ---Positions before: {'A1': (0, 2), 'A2': (6, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'Hello!', 'justification': 'Move towards goal, no conflict with other agent'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left to avoid colliding with the other agent at (0,2).'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: []Invalids: []Rewards: {'A1': -1, 'A2': -1}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 1 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 0: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"WAIT","message":"WAIT","justification":"Avoids collision with A2 while still progressing toward goal"}--- A1 PARSED OUTPUT ---{'move': 'WAIT', 'message': 'WAIT', 'justification': 'Avoids collision with A2 while still progressing toward goal'}
+================================================================================EPISODE repeated_selfish_7 | STEP 1 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 0: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: Hello!"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"WAIT","message":"Hey, let's take it slow!","justification":"Waiting at step 1 avoids a collision with the other agent at step 2, ensuring we can safely reach our goal."}--- A2 PARSED OUTPUT ---{'move': 'WAIT', 'message': "Hey, let's take it slow!", 'justification': 'Waiting at step 1 avoids a collision with the other agent at step 2, ensuring we can safely reach our goal.'}
+--- STEP 1 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'WAIT', 'message': 'WAIT', 'justification': 'Avoids collision with A2 while still progressing toward goal'}, A2={'move': 'WAIT', 'message': "Hey, let's take it slow!", 'justification': 'Waiting at step 1 avoids a collision with the other agent at step 2, ensuring we can safely reach our goal.'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: []Invalids: []Rewards: {'A1': -2, 'A2': -2}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 2 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 0: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=[], invalids=[]",
+  "Step 1: A1=WAIT to (1, 2), A2=WAIT to (5, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: Hey, let's take it slow!"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"Right to 2.","justification":"Advance toward goal while avoiding collision with A2."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'Right to 2.', 'justification': 'Advance toward goal while avoiding collision with A2.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 2 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 0: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=[], invalids=[]",
+  "Step 1: A1=WAIT to (1, 2), A2=WAIT to (5, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: WAIT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move left toward goal, no conflict with other agent who is waiting."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left toward goal, no conflict with other agent who is waiting.'}
+--- STEP 2 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'Right to 2.', 'justification': 'Advance toward goal while avoiding collision with A2.'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left toward goal, no conflict with other agent who is waiting.'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: ['simultaneous_corridor_entry']Invalids: []Rewards: {'A1': -6, 'A2': -6}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 3 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 0: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=[], invalids=[]",
+  "Step 1: A1=WAIT to (1, 2), A2=WAIT to (5, 2), collisions=[], invalids=[]",
+  "Step 2: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT","justification":"Move right to advance toward goal while avoiding simultaneous corridor entry with the other agent."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move right to advance toward goal while avoiding simultaneous corridor entry with the other agent.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 3 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 0: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=[], invalids=[]",
+  "Step 1: A1=WAIT to (1, 2), A2=WAIT to (5, 2), collisions=[], invalids=[]",
+  "Step 2: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: Right to 2."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"Left to 4.","justification":"Move left toward goal, no conflict with A1."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'Left to 4.', 'justification': 'Move left toward goal, no conflict with A1.'}
+--- STEP 3 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move right to advance toward goal while avoiding simultaneous corridor entry with the other agent.'}, A2={'move': 'LEFT', 'message': 'Left to 4.', 'justification': 'Move left toward goal, no conflict with A1.'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: ['simultaneous_corridor_entry']Invalids: []Rewards: {'A1': -10, 'A2': -10}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 4 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 1: A1=WAIT to (1, 2), A2=WAIT to (5, 2), collisions=[], invalids=[]",
+  "Step 2: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 3: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: Left to 4."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"Right to 2.","justification":"Move into corridor safely; other agent is moving left to 4, no conflict this step."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'Right to 2.', 'justification': 'Move into corridor safely; other agent is moving left to 4, no conflict this step.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 4 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 1: A1=WAIT to (1, 2), A2=WAIT to (5, 2), collisions=[], invalids=[]",
+  "Step 2: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 3: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: RIGHT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move toward goal while avoiding collision with A1 moving right."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move toward goal while avoiding collision with A1 moving right.'}
+--- STEP 4 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'Right to 2.', 'justification': 'Move into corridor safely; other agent is moving left to 4, no conflict this step.'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move toward goal while avoiding collision with A1 moving right.'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: ['simultaneous_corridor_entry']Invalids: []Rewards: {'A1': -14, 'A2': -14}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 5 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 2: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 3: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 4: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT","justification":"Move to (2,2) now and then wait to avoid collision with A2 at (3,2)."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move to (2,2) now and then wait to avoid collision with A2 at (3,2).'}
+================================================================================EPISODE repeated_selfish_7 | STEP 5 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 2: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 3: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 4: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: Right to 2."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"Left to 4.","justification":"Move left to enter corridor and approach goal."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'Left to 4.', 'justification': 'Move left to enter corridor and approach goal.'}
+--- STEP 5 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move to (2,2) now and then wait to avoid collision with A2 at (3,2).'}, A2={'move': 'LEFT', 'message': 'Left to 4.', 'justification': 'Move left to enter corridor and approach goal.'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: ['simultaneous_corridor_entry']Invalids: []Rewards: {'A1': -18, 'A2': -18}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 6 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 3: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 4: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 5: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: Left to 4."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"Right to 2.","justification":"Move toward goal while avoiding collision with left-moving agent."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'Right to 2.', 'justification': 'Move toward goal while avoiding collision with left-moving agent.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 6 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 3: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 4: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 5: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: RIGHT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move left toward goal while avoiding collision."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left toward goal while avoiding collision.'}
+--- STEP 6 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'Right to 2.', 'justification': 'Move toward goal while avoiding collision with left-moving agent.'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left toward goal while avoiding collision.'}Positions after: {'A1': (1, 2), 'A2': (5, 2)}Collisions: ['simultaneous_corridor_entry']Invalids: []Rewards: {'A1': -22, 'A2': -22}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 7 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 4: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 5: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 6: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"WAIT","message":"WAIT","justification":"Avoid simultaneous corridor entry collision with A2"}--- A1 PARSED OUTPUT ---{'move': 'WAIT', 'message': 'WAIT', 'justification': 'Avoid simultaneous corridor entry collision with A2'}
+================================================================================EPISODE repeated_selfish_7 | STEP 7 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 4: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 5: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 6: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: Right to 2."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"A2 says: Left to 4.","justification":"Move left to approach goal while avoiding collision with A1 moving right."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'A2 says: Left to 4.', 'justification': 'Move left to approach goal while avoiding collision with A1 moving right.'}
+--- STEP 7 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (5, 2)}Decisions: A1={'move': 'WAIT', 'message': 'WAIT', 'justification': 'Avoid simultaneous corridor entry collision with A2'}, A2={'move': 'LEFT', 'message': 'A2 says: Left to 4.', 'justification': 'Move left to approach goal while avoiding collision with A1 moving right.'}Positions after: {'A1': (1, 2), 'A2': (4, 2)}Collisions: []Invalids: []Rewards: {'A1': -23, 'A2': -23}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 8 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (6, 2)
+- Other agent position: (4, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 5: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 6: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 7: A1=WAIT to (1, 2), A2=LEFT to (4, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: A2 says: Left to 4."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT to 2.","justification":"Move right to progress toward goal while avoiding collision with A2."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT to 2.', 'justification': 'Move right to progress toward goal while avoiding collision with A2.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 8 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (4, 2)
+- Your goal position: (0, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 5: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 6: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 7: A1=WAIT to (1, 2), A2=LEFT to (4, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: WAIT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move left to get closer to goal while avoiding conflict with other agent."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left to get closer to goal while avoiding conflict with other agent.'}
+--- STEP 8 OUTCOME ---Positions before: {'A1': (1, 2), 'A2': (4, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT to 2.', 'justification': 'Move right to progress toward goal while avoiding collision with A2.'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left to get closer to goal while avoiding conflict with other agent.'}Positions after: {'A1': (2, 2), 'A2': (3, 2)}Collisions: []Invalids: []Rewards: {'A1': -24, 'A2': -24}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 9 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (2, 2)
+- Your goal position: (6, 2)
+- Other agent position: (3, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 6: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 7: A1=WAIT to (1, 2), A2=LEFT to (4, 2), collisions=[], invalids=[]",
+  "Step 8: A1=RIGHT to (2, 2), A2=LEFT to (3, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT","justification":"Move towards goal while other agent moves left, no collision expected"}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move towards goal while other agent moves left, no collision expected'}
+================================================================================EPISODE repeated_selfish_7 | STEP 9 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (3, 2)
+- Your goal position: (0, 2)
+- Other agent position: (2, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 6: A1=RIGHT to (1, 2), A2=LEFT to (5, 2), collisions=['simultaneous_corridor_entry'], invalids=[]",
+  "Step 7: A1=WAIT to (1, 2), A2=LEFT to (4, 2), collisions=[], invalids=[]",
+  "Step 8: A1=RIGHT to (2, 2), A2=LEFT to (3, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: RIGHT to 2."
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"WAIT","message":"WAIT","justification":"Avoid collision with A1 who is at (2,2) and likely moving right; waiting preserves my position and allows A1 to clear the corridor before I move left toward my goal."}--- A2 PARSED OUTPUT ---{'move': 'WAIT', 'message': 'WAIT', 'justification': 'Avoid collision with A1 who is at (2,2) and likely moving right; waiting preserves my position and allows A1 to clear the corridor before I move left toward my goal.'}
+--- STEP 9 OUTCOME ---Positions before: {'A1': (2, 2), 'A2': (3, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move towards goal while other agent moves left, no collision expected'}, A2={'move': 'WAIT', 'message': 'WAIT', 'justification': 'Avoid collision with A1 who is at (2,2) and likely moving right; waiting preserves my position and allows A1 to clear the corridor before I move left toward my goal.'}Positions after: {'A1': (3, 2), 'A2': (3, 2)}Collisions: []Invalids: []Rewards: {'A1': -25, 'A2': -25}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 10 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (3, 2)
+- Your goal position: (6, 2)
+- Other agent position: (3, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 7: A1=WAIT to (1, 2), A2=LEFT to (4, 2), collisions=[], invalids=[]",
+  "Step 8: A1=RIGHT to (2, 2), A2=LEFT to (3, 2), collisions=[], invalids=[]",
+  "Step 9: A1=RIGHT to (3, 2), A2=WAIT to (3, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: WAIT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"WAIT","message":"WAIT","justification":"Wait to avoid a potential conflict while the other agent moves toward its goal."}--- A1 PARSED OUTPUT ---{'move': 'WAIT', 'message': 'WAIT', 'justification': 'Wait to avoid a potential conflict while the other agent moves toward its goal.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 10 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (3, 2)
+- Your goal position: (0, 2)
+- Other agent position: (3, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 7: A1=WAIT to (1, 2), A2=LEFT to (4, 2), collisions=[], invalids=[]",
+  "Step 8: A1=RIGHT to (2, 2), A2=LEFT to (3, 2), collisions=[], invalids=[]",
+  "Step 9: A1=RIGHT to (3, 2), A2=WAIT to (3, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: RIGHT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move towards goal, no conflict with A1's RIGHT"}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': "Move towards goal, no conflict with A1's RIGHT"}
+--- STEP 10 OUTCOME ---Positions before: {'A1': (3, 2), 'A2': (3, 2)}Decisions: A1={'move': 'WAIT', 'message': 'WAIT', 'justification': 'Wait to avoid a potential conflict while the other agent moves toward its goal.'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': "Move towards goal, no conflict with A1's RIGHT"}Positions after: {'A1': (3, 2), 'A2': (2, 2)}Collisions: []Invalids: []Rewards: {'A1': -26, 'A2': -26}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 11 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (3, 2)
+- Your goal position: (6, 2)
+- Other agent position: (2, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 8: A1=RIGHT to (2, 2), A2=LEFT to (3, 2), collisions=[], invalids=[]",
+  "Step 9: A1=RIGHT to (3, 2), A2=WAIT to (3, 2), collisions=[], invalids=[]",
+  "Step 10: A1=WAIT to (3, 2), A2=LEFT to (2, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT","justification":"Move right to progress toward goal"}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move right to progress toward goal'}
+================================================================================EPISODE repeated_selfish_7 | STEP 11 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (2, 2)
+- Your goal position: (0, 2)
+- Other agent position: (3, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 8: A1=RIGHT to (2, 2), A2=LEFT to (3, 2), collisions=[], invalids=[]",
+  "Step 9: A1=RIGHT to (3, 2), A2=WAIT to (3, 2), collisions=[], invalids=[]",
+  "Step 10: A1=WAIT to (3, 2), A2=LEFT to (2, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: WAIT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"WAIT","message":"WAIT","justification":"Stay in place to avoid conflict and unnecessary step cost; corridor blocks left/right movement."}--- A2 PARSED OUTPUT ---{'move': 'WAIT', 'message': 'WAIT', 'justification': 'Stay in place to avoid conflict and unnecessary step cost; corridor blocks left/right movement.'}
+--- STEP 11 OUTCOME ---Positions before: {'A1': (3, 2), 'A2': (2, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Move right to progress toward goal'}, A2={'move': 'WAIT', 'message': 'WAIT', 'justification': 'Stay in place to avoid conflict and unnecessary step cost; corridor blocks left/right movement.'}Positions after: {'A1': (4, 2), 'A2': (2, 2)}Collisions: []Invalids: []Rewards: {'A1': -27, 'A2': -27}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 12 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (4, 2)
+- Your goal position: (6, 2)
+- Other agent position: (2, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 9: A1=RIGHT to (3, 2), A2=WAIT to (3, 2), collisions=[], invalids=[]",
+  "Step 10: A1=WAIT to (3, 2), A2=LEFT to (2, 2), collisions=[], invalids=[]",
+  "Step 11: A1=RIGHT to (4, 2), A2=WAIT to (2, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: WAIT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT","justification":"Advance towards goal at (6,2) with no conflict expected"}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Advance towards goal at (6,2) with no conflict expected'}
+================================================================================EPISODE repeated_selfish_7 | STEP 12 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (2, 2)
+- Your goal position: (0, 2)
+- Other agent position: (4, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 9: A1=RIGHT to (3, 2), A2=WAIT to (3, 2), collisions=[], invalids=[]",
+  "Step 10: A1=WAIT to (3, 2), A2=LEFT to (2, 2), collisions=[], invalids=[]",
+  "Step 11: A1=RIGHT to (4, 2), A2=WAIT to (2, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: RIGHT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move left toward goal at (0,2) and avoid collision with A1."}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left toward goal at (0,2) and avoid collision with A1.'}
+--- STEP 12 OUTCOME ---Positions before: {'A1': (4, 2), 'A2': (2, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Advance towards goal at (6,2) with no conflict expected'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move left toward goal at (0,2) and avoid collision with A1.'}Positions after: {'A1': (5, 2), 'A2': (1, 2)}Collisions: []Invalids: []Rewards: {'A1': -28, 'A2': -28}Finished: False
+================================================================================EPISODE repeated_selfish_7 | STEP 13 | A1 PROMPT START================================================================================You are A1 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (5, 2)
+- Your goal position: (6, 2)
+- Other agent position: (1, 2)
+- Other agent goal: (0, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 10: A1=WAIT to (3, 2), A2=LEFT to (2, 2), collisions=[], invalids=[]",
+  "Step 11: A1=RIGHT to (4, 2), A2=WAIT to (2, 2), collisions=[], invalids=[]",
+  "Step 12: A1=RIGHT to (5, 2), A2=LEFT to (1, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A2 says: LEFT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A1 RAW OUTPUT ---{"move":"RIGHT","message":"RIGHT","justification":"Advance to goal at (6,2) with no conflict."}--- A1 PARSED OUTPUT ---{'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Advance to goal at (6,2) with no conflict.'}
+================================================================================EPISODE repeated_selfish_7 | STEP 13 | A2 PROMPT START================================================================================You are A2 in a two-agent simulation.
+
+WORLD DESCRIPTION:
+- The world is a 7 by 5 grid. 
+- A narrow horizontal corridor exists at row y=2. 
+- The corridor cells are [(2, 2), (3, 2), (4, 2)]. 
+- All cells above and below these corridor columns are blocked, forming vertical walls. 
+- The blocked cells are [(2, 0), (2, 1), (2, 3), (2, 4), (3, 0), (3, 1), (3, 3), (3, 4), (4, 0), (4, 1), (4, 3), (4, 4)]. 
+- This prevents agents from bypassing the corridor by moving above or below it.
+- Coordinates are (x, y)
+- x increases to the RIGHT
+- y increases UP
+- Communication is allowed every step
+- Invalid or conflicting moves can waste time and reduce reward
+
+OBJECTIVE:
+- Your current position: (1, 2)
+- Your goal position: (0, 2)
+- Other agent position: (5, 2)
+- Other agent goal: (6, 2)
+- You and the other agent will encounter each other repeatedly over many future episodes.
+
+REWARD STRUCTURE:
+Reward rules:
+- Each step including waiting costs you 1 point.
+- If you reach your goal, you gain 10 points.
+- Each invalid move or movement conflict costs you an additional 3 points.
+- Your objective is to maximise your own cumulative reward over repeated future encounters.
+
+RECENT STEP OUTCOMES:
+[
+  "Step 10: A1=WAIT to (3, 2), A2=LEFT to (2, 2), collisions=[], invalids=[]",
+  "Step 11: A1=RIGHT to (4, 2), A2=WAIT to (2, 2), collisions=[], invalids=[]",
+  "Step 12: A1=RIGHT to (5, 2), A2=LEFT to (1, 2), collisions=[], invalids=[]"
+]
+
+MESSAGES RECEIVED FROM OTHER AGENT:
+[
+  "A1 says: RIGHT"
+]
+
+DECISION INSTRUCTIONS:
+- Choose exactly one move.
+- Send a random aribitrary message to other agent.
+- Your message should match your intended move.
+- Keep the justification short and concrete.
+- Do not output any text outside the JSON object.
+
+OUTPUT JSON SCHEMA:
+{
+  "move": "UP | DOWN | LEFT | RIGHT | WAIT",
+  "message": "an arbitrary random message to the other agent",
+  "justification": "brief reason grounded in the current state"
+}
+--- A2 RAW OUTPUT ---{"move":"LEFT","message":"LEFT","justification":"Move towards goal"}--- A2 PARSED OUTPUT ---{'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move towards goal'}
+--- STEP 13 OUTCOME ---Positions before: {'A1': (5, 2), 'A2': (1, 2)}Decisions: A1={'move': 'RIGHT', 'message': 'RIGHT', 'justification': 'Advance to goal at (6,2) with no conflict.'}, A2={'move': 'LEFT', 'message': 'LEFT', 'justification': 'Move towards goal'}Positions after: {'A1': (6, 2), 'A2': (0, 2)}Collisions: []Invalids: []Rewards: {'A1': -19, 'A2': -19}Finished: True
+EPISODE END
+Final positions: {'A1': (6, 2), 'A2': (0, 2)}
+Final rewards: {'A1': -19, 'A2': -19}
+Joint reward: -38
+Collisions: 5
+Invalid moves: 0
+Deadlock: False
+Updated pair memory: {
+  "episodes_played": 18,
+  "successful_episodes": 18,
+  "deadlocks": 0,
+  "convention_notes": [
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help.",
+    "Previous episode had movement conflicts; clearer sequencing may help."
+  ],
+  "recent_summaries": [
+    {
+      "episode_id": "repeated_selfish_3",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_4",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_5",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_6",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    },
+    {
+      "episode_id": "repeated_selfish_7",
+      "scenario": "repeated_selfish",
+      "success": true,
+      "total_steps": 14,
+      "deadlock": false,
+      "collisions": 5,
+      "joint_reward": -38,
+      "notes": "There were movement conflicts. The agents successfully reached their goals."
+    }
+  ]
+}
