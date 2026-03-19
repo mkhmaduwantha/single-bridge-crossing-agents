@@ -13,7 +13,7 @@ from schemas import AgentDecision, AgentName, LLMTrace, SimulationState
 def make_llm(model_name: str = DEFAULT_MODEL, base_url: Optional[str] = DEFAULT_BASE_URL) -> ChatOllama:
     kwargs = {
         "model": model_name,
-        "temperature": 0,
+        "temperature": 0.3,
     }
     if base_url:
         kwargs["base_url"] = base_url

@@ -13,7 +13,7 @@ def main() -> None:
 
     print("Running base coordination simulation...\n")
     for scenario in scenarios:
-        for episode in range(8,9):
+        for episode in range(50):
             run_episode(scenario=scenario, episode_id=f"{scenario}_{episode}", pair_id="A1_A2")
         # final_state = run_episode(scenario=scenario, pair_id="A1_A2")
         # print_episode_report(final_state)

@@ -6,7 +6,7 @@ from typing import Literal
 
 GRID_W = 7
 GRID_H = 5
-MAX_STEPS = 35
+MAX_STEPS = 40
 CORRIDOR_Y = 2
 CORRIDOR_XS = {2, 3, 4}
 VALID_MOVES = {"UP", "DOWN", "LEFT", "RIGHT", "WAIT"}

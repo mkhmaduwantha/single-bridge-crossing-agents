@@ -135,17 +135,20 @@ def node_environment_step(state: SimulationState) -> Dict[str, Any]:
     rewards["A2"] += rewards_delta["A2"]
     joint_reward = rewards["A1"] + rewards["A2"]
 
-    outcome_text = (
-        f"Step {state['step']}: "
-        f"A1={decisions['A1'].move} to {positions_after['A1']}, "
-        f"A2={decisions['A2'].move} to {positions_after['A2']}, "
-        f"collisions={resolved['collisions']}, invalids={resolved['invalids']}"
-    )
+    
 
     next_inboxes = {
         "A1": [f"A2 says: {decisions['A2'].message}"],
         "A2": [f"A1 says: {decisions['A1'].message}"],
     }
+
+    outcome_text = (
+        f"Step {state['step']}: "
+        f"A1={decisions['A1'].move} to {positions_after['A1']}, "
+        f"A2={decisions['A2'].move} to {positions_after['A2']}, "
+        f"collisions={resolved['collisions']}, invalids={resolved['invalids']}, "
+        f"messages: A1='{decisions['A1'].message}', A2='{decisions['A2'].message}'"
+    )
 
     history = list(state.get("history", []))
     step_record: StepRecord = {
